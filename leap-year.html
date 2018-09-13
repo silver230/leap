@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>Leap year</title>
+
+    <script type="text/javascript">
+    		var silver = function(id) { return document.getElementById(id); }
+    		function leap_year() {
+    			var year = silver("year");
+    			var result;
+    			var leap = year.value % 4 == 0 && year % 100 != 0 || year % 400 == 0
+    			if (leap == true)
+    				result = year.value + " is a leap year!";
+    			else
+    				result = year.value + " is not a leap year!";
+    			silver("text_where").innerHTML = result;
+    		}
+    	</script>
+    </head>
+  </head>
+  <body>
+	<div id="get_year">
+		<p>LEAP YEARS DETECTOR</p>
+
+			<input type="text" id="year" name="year" />
+			<input type="button" id="Find out!" value="CONFIRM" onclick="leap_year();" />
+		</div>
+		<div id="text_where"></div>
+</body>
+</html>
